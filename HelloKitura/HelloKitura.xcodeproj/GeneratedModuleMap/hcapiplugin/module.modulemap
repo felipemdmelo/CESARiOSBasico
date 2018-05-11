@@ -1,0 +1,4 @@
+module hcapiplugin {
+    umbrella "/Users/aluno/Desktop/felipemdmelo/HelloKitura/.build/checkouts/omr-agentcore-1826539389957424207/src/hcapiplugin/include"
+    export *
+}

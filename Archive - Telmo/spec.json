@@ -1,0 +1,14 @@
+{
+  "appType": "scaffold",
+  "appName": "HelloKitura",
+  "docker": true,
+  "metrics": true,
+  "bluemix": {
+    "backendPlatform": "SWIFT",
+    "name": "HelloKitura",
+    "server": {
+      "name": "HelloKitura",
+      "env": {}
+    }
+  }
+}
