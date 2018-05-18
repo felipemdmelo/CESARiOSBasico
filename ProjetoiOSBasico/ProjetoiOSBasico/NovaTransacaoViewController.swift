@@ -12,6 +12,9 @@ class NovaTransacaoViewController: UIViewController {
 
     @IBOutlet weak var informeValorTextField: UITextField!
     
+    // Model information - Usuario Logado..
+    var usuario = UsuarioModel()
+    
     // Repository information..
     let bancoRepository = BancoRepository.instance
     
@@ -34,8 +37,15 @@ class NovaTransacaoViewController: UIViewController {
         // Pass the selected object to the new view controller.
         let transacaoModel = TransacaoModel()
         let valor:Int? = Int(informeValorTextField.text!)
-        transacaoModel.valor = valor!
-        bancoRepository.insert(value: transacaoModel)
+        if valor != nil && valor != 0 {
+            transacaoModel.valor = valor!
+            bancoRepository.insert(value: transacaoModel)
+        }
+        
+        if(segue.identifier == "NovaTransacaoSegueHome") {
+            let nextView = (segue.destination as! HomeViewController)
+            nextView.usuario = usuario
+        }
     }
 
 }
