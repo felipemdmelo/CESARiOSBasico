@@ -22,6 +22,7 @@ class NovaTransacaoViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Nova Transacao"
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,22 +31,28 @@ class NovaTransacaoViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func salvar(_ sender: Any) {
         let transacaoModel = TransacaoModel()
         let valor:Int? = Int(informeValorTextField.text!)
         if valor != nil && valor != 0 {
             transacaoModel.valor = valor!
             bancoRepository.insert(value: transacaoModel)
+            
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            exibirMensagem(titulo: "Erro!", mensagem: "Informacao invalida.")
         }
+    }
+    
+    func exibirMensagem(titulo: String, mensagem: String) {
+        let alert = UIAlertController(title: titulo,
+                                      message: mensagem,
+                                      preferredStyle: UIAlertControllerStyle.alert)
         
-        if(segue.identifier == "NovaTransacaoSegueHome") {
-            let nextView = (segue.destination as! HomeViewController)
-            nextView.usuario = usuario
-        }
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

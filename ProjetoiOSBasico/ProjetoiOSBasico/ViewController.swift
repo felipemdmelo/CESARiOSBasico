@@ -37,19 +37,19 @@ class ViewController: UIViewController {
             print("Erro! O campo senha deve ter no minimo 4 caracteres.")
         } else if usuario.login == "Felipe" &&
             usuario.senha == "1234" {
-            irParaHomeView()
+            irParaExtratoTableView()
         } else {
             exibirMensagem(titulo: "Erro!", mensagem: "Usuario e/ou senha invalidos.")
             print("Erro! Usuario e/ou senha invalidos.")
         }
     }
     
-    func irParaHomeView() {
-        let homeView = storyboard?.instantiateViewController(withIdentifier: "HomeViewID") as! HomeViewController
+    func irParaExtratoTableView() {
+        let extratoView = storyboard?.instantiateViewController(withIdentifier: "ExtratoTableTableViewController") as! ExtratoTableTableViewController
         // Simulando o nome para o usuario..
         usuario.nome = "Felipe Melo"
-        homeView.usuario = usuario
-        navigationController?.pushViewController(homeView, animated: true)
+        extratoView.usuario = usuario
+        navigationController?.pushViewController(extratoView, animated: true)
     }
     
     func gerarUsuarioLoginDoForm() -> UsuarioModel {

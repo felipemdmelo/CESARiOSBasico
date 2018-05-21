@@ -1,52 +1,60 @@
 //
-//  HomeViewController.swift
+//  ExtratoTableTableViewController.swift
 //  ProjetoiOSBasico
 //
-//  Created by Aluno on 12/05/18.
+//  Created by Aluno on 21/05/18.
 //  Copyright © 2018 Aluno. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ExtratoTableTableViewController: UITableViewController {
     
-    @IBOutlet weak var bemVindoLabel: UILabel!
-
-    @IBOutlet weak var extratoTableView: UITableView!
+    @IBOutlet var extratoTableView: UITableView!
     
     // Model information - Usuario Logado..
     var usuario = UsuarioModel()
     
     // Repository information..
     let bancoRepository = BancoRepository.instance
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        // Exibir mensagem de bem vindo..
-        bemVindoLabel.text = "Bem vindo, \(usuario.nome)!"
-        
-        // Configura delegate e data source para este controller..
-        extratoTableView.delegate = self
-        extratoTableView.dataSource = self
+        self.navigationItem.title = "Extrato"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        extratoTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bancoRepository.size()
     }
-    
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return bancoRepository.saldoDescricao()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransacaoCell", for: indexPath)
         
         // Configure the cell...

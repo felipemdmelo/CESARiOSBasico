@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Acesso ao sistema-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProjetoiOSBasico" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UT8-6J-24j">
+                    <navigationItem key="navigationItem" title="Acesso ao sistema" id="UT8-6J-24j">
                         <barButtonItem key="backBarButtonItem" title="Logout" id="TZR-F4-8gc"/>
                     </navigationItem>
                     <connections>
@@ -106,77 +106,49 @@
             </objects>
             <point key="canvasLocation" x="522" y="687"/>
         </scene>
-        <!--Home View Controller-->
-        <scene sceneID="A43-nK-Ngh">
+        <!--Extrato Table Table View Controller-->
+        <scene sceneID="CVB-30-u3F">
             <objects>
-                <viewController storyboardIdentifier="HomeViewID" id="EaU-H5-icG" customClass="HomeViewController" customModule="ProjetoiOSBasico" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h8D-0i-Nxl">
+                <tableViewController storyboardIdentifier="ExtratoTableTableViewController" id="aPg-9g-dAH" customClass="ExtratoTableTableViewController" customModule="ProjetoiOSBasico" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A29-bo-vsq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem Vindo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-rq-WRp">
-                                <rect key="frame" x="16" y="70" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bk9-aH-aLZ">
-                                <rect key="frame" x="0.0" y="107" width="375" height="414"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="414" id="jaF-eI-1IT"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransacaoCell" textLabel="5GZ-cg-HgV" style="IBUITableViewCellStyleDefault" id="XVJ-Uu-UHi">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XVJ-Uu-UHi" id="Du9-Ei-to0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5GZ-cg-HgV">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2d-jh-2sW">
-                                <rect key="frame" x="16" y="537" width="343" height="30"/>
-                                <state key="normal" title="Nova Transacao"/>
-                                <connections>
-                                    <segue destination="p0c-VH-RrI" kind="show" identifier="HomeSegueNovaTransacao" id="qax-tV-bHu"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="kKg-CW-dgj" firstAttribute="trailing" secondItem="g2d-rq-WRp" secondAttribute="trailing" constant="16" id="3Kh-Oa-1CK"/>
-                            <constraint firstItem="Bk9-aH-aLZ" firstAttribute="trailing" secondItem="kKg-CW-dgj" secondAttribute="trailing" id="Q3a-ak-8Bh"/>
-                            <constraint firstItem="F2d-jh-2sW" firstAttribute="leading" secondItem="kKg-CW-dgj" secondAttribute="leading" constant="16" id="Vai-cl-Tr3"/>
-                            <constraint firstItem="F2d-jh-2sW" firstAttribute="top" secondItem="Bk9-aH-aLZ" secondAttribute="bottom" constant="16" id="fJc-QE-fgy"/>
-                            <constraint firstItem="Bk9-aH-aLZ" firstAttribute="top" secondItem="g2d-rq-WRp" secondAttribute="bottom" constant="16" id="gId-cF-g0O"/>
-                            <constraint firstItem="g2d-rq-WRp" firstAttribute="top" secondItem="kKg-CW-dgj" secondAttribute="top" constant="50" id="kft-8k-Srb"/>
-                            <constraint firstItem="kKg-CW-dgj" firstAttribute="trailing" secondItem="g2d-rq-WRp" secondAttribute="trailing" constant="16" id="p8h-bV-DXm"/>
-                            <constraint firstItem="Bk9-aH-aLZ" firstAttribute="leading" secondItem="kKg-CW-dgj" secondAttribute="leading" id="xOb-Ea-Bcl"/>
-                            <constraint firstItem="kKg-CW-dgj" firstAttribute="trailing" secondItem="F2d-jh-2sW" secondAttribute="trailing" constant="16" id="yaQ-eh-4k2"/>
-                            <constraint firstItem="g2d-rq-WRp" firstAttribute="leading" secondItem="kKg-CW-dgj" secondAttribute="leading" constant="16" id="zaE-D6-i93"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="kKg-CW-dgj"/>
-                    </view>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Zt8-Qa-rHK">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Transacao" id="fAe-0x-Re3">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Cm-uB-lXa">
+                                        <connections>
+                                            <segue destination="p0c-VH-RrI" kind="show" identifier="HomeSegueNovaTransacao" id="VZM-ma-be7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransacaoCell" id="aPg-eI-mi2">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aPg-eI-mi2" id="Nd9-uF-UdF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aPg-9g-dAH" id="R3n-CP-c3t"/>
+                            <outlet property="delegate" destination="aPg-9g-dAH" id="fdo-8k-pPE"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="bemVindoLabel" destination="g2d-rq-WRp" id="ReP-pf-Az3"/>
-                        <outlet property="extratoTableView" destination="Bk9-aH-aLZ" id="DAf-MU-pVf"/>
+                        <outlet property="extratoTableView" destination="A29-bo-vsq" id="zOs-uH-rby"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xQf-Rf-ofj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6GA-8f-sls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="686.80659670164926"/>
+            <point key="canvasLocation" x="1292" y="688"/>
         </scene>
         <!--Nova Transacao View Controller-->
         <scene sceneID="Qyd-6B-NUs">
@@ -205,11 +177,18 @@
                                         <rect key="frame" x="0.0" y="60" width="343" height="30"/>
                                         <state key="normal" title="Salvar"/>
                                         <connections>
-                                            <segue destination="EaU-H5-icG" kind="show" identifier="NovaTransacaoSegueHome" id="K9D-Z8-DRw"/>
+                                            <action selector="salvar:" destination="p0c-VH-RrI" eventType="touchUpInside" id="Ydw-p1-7CE"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XNz-TN-7Ue">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Nova transacao" id="82u-LE-K0L"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -246,7 +225,4 @@
             <point key="canvasLocation" x="-326" y="687"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="qax-tV-bHu"/>
-    </inferredMetricsTieBreakers>
 </document>

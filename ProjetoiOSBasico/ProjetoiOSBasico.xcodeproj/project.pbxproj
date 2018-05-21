@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570A960020B3236800C20D3D /* ExtratoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A95FF20B3236800C20D3D /* ExtratoTableTableViewController.swift */; };
 		572FCE7420A74D2000B89A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FCE7320A74D2000B89A24 /* AppDelegate.swift */; };
 		572FCE7620A74D2000B89A24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FCE7520A74D2000B89A24 /* ViewController.swift */; };
 		572FCE7920A74D2000B89A24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572FCE7720A74D2000B89A24 /* Main.storyboard */; };
@@ -15,11 +16,11 @@
 		572FCE8620A74EAC00B89A24 /* UsuarioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FCE8520A74EAC00B89A24 /* UsuarioModel.swift */; };
 		572FCE8E20A76D4A00B89A24 /* BancoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FCE8D20A76D4A00B89A24 /* BancoRepository.swift */; };
 		572FCE9020A7713100B89A24 /* TransacaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FCE8F20A7713100B89A24 /* TransacaoModel.swift */; };
-		572FCE9220A777E700B89A24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FCE9120A777E700B89A24 /* HomeViewController.swift */; };
 		572FCE9820A7818500B89A24 /* NovaTransacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FCE9720A7818500B89A24 /* NovaTransacaoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570A95FF20B3236800C20D3D /* ExtratoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtratoTableTableViewController.swift; sourceTree = "<group>"; };
 		572FCE7020A74D2000B89A24 /* ProjetoiOSBasico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetoiOSBasico.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		572FCE7320A74D2000B89A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		572FCE7520A74D2000B89A24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		572FCE8520A74EAC00B89A24 /* UsuarioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioModel.swift; sourceTree = "<group>"; };
 		572FCE8D20A76D4A00B89A24 /* BancoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BancoRepository.swift; sourceTree = "<group>"; };
 		572FCE8F20A7713100B89A24 /* TransacaoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransacaoModel.swift; sourceTree = "<group>"; };
-		572FCE9120A777E700B89A24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		572FCE9720A7818500B89A24 /* NovaTransacaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaTransacaoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,8 +73,8 @@
 				572FCE8520A74EAC00B89A24 /* UsuarioModel.swift */,
 				572FCE8D20A76D4A00B89A24 /* BancoRepository.swift */,
 				572FCE8F20A7713100B89A24 /* TransacaoModel.swift */,
-				572FCE9120A777E700B89A24 /* HomeViewController.swift */,
 				572FCE9720A7818500B89A24 /* NovaTransacaoViewController.swift */,
+				570A95FF20B3236800C20D3D /* ExtratoTableTableViewController.swift */,
 			);
 			path = ProjetoiOSBasico;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 				572FCE8620A74EAC00B89A24 /* UsuarioModel.swift in Sources */,
 				572FCE9820A7818500B89A24 /* NovaTransacaoViewController.swift in Sources */,
 				572FCE7420A74D2000B89A24 /* AppDelegate.swift in Sources */,
-				572FCE9220A777E700B89A24 /* HomeViewController.swift in Sources */,
+				570A960020B3236800C20D3D /* ExtratoTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
