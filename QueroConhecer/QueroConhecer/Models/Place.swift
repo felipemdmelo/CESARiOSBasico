@@ -15,6 +15,8 @@ struct Place: Codable {
     let longitude: CLLocationDegrees
     let address: String
     
+    var tracarRota = false
+    
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }

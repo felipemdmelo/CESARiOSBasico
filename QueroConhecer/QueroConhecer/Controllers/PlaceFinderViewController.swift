@@ -107,7 +107,7 @@ class PlaceFinderViewController: UIViewController {
         // Nil-Coalescing Operator
         let name = placemark.name ?? placemark.country ?? "Desconhecido"
         let address = Place.getFormattedAddress(with: placemark)
-        place = Place(name: name, latitude: coordinate.latitude, longitude: coordinate.longitude, address: address)
+        place = Place(name: name, latitude: coordinate.latitude, longitude: coordinate.longitude, address: address, tracarRota: false)
         
         // para mostrar no mapa precisamos criar uma região para exibi-la
         let region = MKCoordinateRegionMakeWithDistance(coordinate, 3500, 3500)
