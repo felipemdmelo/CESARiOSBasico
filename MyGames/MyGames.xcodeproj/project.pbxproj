@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5781D7EA2103A01C00D3C794 /* AdicionarEditarPlataformaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781D7E92103A01C00D3C794 /* AdicionarEditarPlataformaViewController.swift */; };
+		5781D7ED2103B4A000D3C794 /* ListaPlataformasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781D7EC2103B4A000D3C794 /* ListaPlataformasTableViewCell.swift */; };
+		5781D7EF2103B98B00D3C794 /* ListaJogosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781D7EE2103B98B00D3C794 /* ListaJogosTableViewCell.swift */; };
 		57A75DEB210297EB001676F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A75DEA210297EB001676F3 /* AppDelegate.swift */; };
-		57A75DED210297EB001676F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A75DEC210297EB001676F3 /* ViewController.swift */; };
 		57A75DF0210297EB001676F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A75DEE210297EB001676F3 /* Main.storyboard */; };
 		57A75DF3210297EB001676F3 /* MyGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57A75DF1210297EB001676F3 /* MyGames.xcdatamodeld */; };
 		57A75DF5210297EC001676F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A75DF4210297EC001676F3 /* Assets.xcassets */; };
 		57A75DF8210297EC001676F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A75DF6210297EC001676F3 /* LaunchScreen.storyboard */; };
+		57A75E022102A39F001676F3 /* ListaJogosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A75E012102A39F001676F3 /* ListaJogosTableViewController.swift */; };
+		57A75E072102ACBC001676F3 /* ListaPlataformasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A75E062102ACBC001676F3 /* ListaPlataformasTableViewController.swift */; };
+		57EA7934210354AE004CE805 /* JogoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EA7933210354AE004CE805 /* JogoViewController.swift */; };
+		57EA7936210354C2004CE805 /* AdicionarEditarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EA7935210354C2004CE805 /* AdicionarEditarViewController.swift */; };
+		57EA793921036655004CE805 /* ViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EA793821036655004CE805 /* ViewController+CoreData.swift */; };
+		57EA793C21037058004CE805 /* PlataformaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EA793B21037058004CE805 /* PlataformaManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5781D7E92103A01C00D3C794 /* AdicionarEditarPlataformaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarEditarPlataformaViewController.swift; sourceTree = "<group>"; };
+		5781D7EC2103B4A000D3C794 /* ListaPlataformasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaPlataformasTableViewCell.swift; sourceTree = "<group>"; };
+		5781D7EE2103B98B00D3C794 /* ListaJogosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaJogosTableViewCell.swift; sourceTree = "<group>"; };
 		57A75DE7210297EB001676F3 /* MyGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A75DEA210297EB001676F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57A75DEC210297EB001676F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57A75DEF210297EB001676F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57A75DF2210297EB001676F3 /* MyGames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyGames.xcdatamodel; sourceTree = "<group>"; };
 		57A75DF4210297EC001676F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A75DF7210297EC001676F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A75DF9210297EC001676F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57A75E012102A39F001676F3 /* ListaJogosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaJogosTableViewController.swift; sourceTree = "<group>"; };
+		57A75E062102ACBC001676F3 /* ListaPlataformasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaPlataformasTableViewController.swift; sourceTree = "<group>"; };
+		57EA7933210354AE004CE805 /* JogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogoViewController.swift; sourceTree = "<group>"; };
+		57EA7935210354C2004CE805 /* AdicionarEditarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarEditarViewController.swift; sourceTree = "<group>"; };
+		57EA793821036655004CE805 /* ViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoreData.swift"; sourceTree = "<group>"; };
+		57EA793B21037058004CE805 /* PlataformaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlataformaManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5781D7EB2103B46E00D3C794 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5781D7EC2103B4A000D3C794 /* ListaPlataformasTableViewCell.swift */,
+				5781D7EE2103B98B00D3C794 /* ListaJogosTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		57A75DDE210297EA001676F3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +81,62 @@
 		57A75DE9210297EB001676F3 /* MyGames */ = {
 			isa = PBXGroup;
 			children = (
+				57EA793A21037038004CE805 /* Managers */,
+				57EA793721036616004CE805 /* Extensions */,
+				57A75E032102A4D7001676F3 /* Models */,
 				57A75DEA210297EB001676F3 /* AppDelegate.swift */,
-				57A75DEC210297EB001676F3 /* ViewController.swift */,
-				57A75DEE210297EB001676F3 /* Main.storyboard */,
+				57A75E0021029C09001676F3 /* Controllers */,
+				57A75DFF21029B5B001676F3 /* Views */,
 				57A75DF4210297EC001676F3 /* Assets.xcassets */,
-				57A75DF6210297EC001676F3 /* LaunchScreen.storyboard */,
 				57A75DF9210297EC001676F3 /* Info.plist */,
 				57A75DF1210297EB001676F3 /* MyGames.xcdatamodeld */,
 			);
 			path = MyGames;
+			sourceTree = "<group>";
+		};
+		57A75DFF21029B5B001676F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57A75DEE210297EB001676F3 /* Main.storyboard */,
+				57A75DF6210297EC001676F3 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A75E0021029C09001676F3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5781D7EB2103B46E00D3C794 /* Cell */,
+				57A75E012102A39F001676F3 /* ListaJogosTableViewController.swift */,
+				57A75E062102ACBC001676F3 /* ListaPlataformasTableViewController.swift */,
+				57EA7933210354AE004CE805 /* JogoViewController.swift */,
+				57EA7935210354C2004CE805 /* AdicionarEditarViewController.swift */,
+				5781D7E92103A01C00D3C794 /* AdicionarEditarPlataformaViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A75E032102A4D7001676F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57EA793721036616004CE805 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				57EA793821036655004CE805 /* ViewController+CoreData.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		57EA793A21037038004CE805 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				57EA793B21037058004CE805 /* PlataformaManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +210,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A75DED210297EB001676F3 /* ViewController.swift in Sources */,
+				57A75E022102A39F001676F3 /* ListaJogosTableViewController.swift in Sources */,
+				57A75E072102ACBC001676F3 /* ListaPlataformasTableViewController.swift in Sources */,
+				5781D7ED2103B4A000D3C794 /* ListaPlataformasTableViewCell.swift in Sources */,
+				5781D7EF2103B98B00D3C794 /* ListaJogosTableViewCell.swift in Sources */,
 				57A75DEB210297EB001676F3 /* AppDelegate.swift in Sources */,
+				57EA793921036655004CE805 /* ViewController+CoreData.swift in Sources */,
+				57EA793C21037058004CE805 /* PlataformaManager.swift in Sources */,
 				57A75DF3210297EB001676F3 /* MyGames.xcdatamodeld in Sources */,
+				57EA7936210354C2004CE805 /* AdicionarEditarViewController.swift in Sources */,
+				5781D7EA2103A01C00D3C794 /* AdicionarEditarPlataformaViewController.swift in Sources */,
+				57EA7934210354AE004CE805 /* JogoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

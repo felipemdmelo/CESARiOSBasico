@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Jogo" representedClassName="Jogo" syncable="YES" codeGenerationType="class">
+        <attribute name="capa" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="dataLancamento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="plataforma" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plataforma" inverseName="jogos" inverseEntity="Plataforma" syncable="YES"/>
+    </entity>
+    <entity name="Plataforma" representedClassName="Plataforma" syncable="YES" codeGenerationType="class">
+        <attribute name="foto" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="jogos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Jogo" inverseName="plataforma" inverseEntity="Jogo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Jogo" positionX="-333" positionY="-72" width="128" height="103"/>
+        <element name="Plataforma" positionX="-54" positionY="18" width="128" height="90"/>
+    </elements>
 </model>
