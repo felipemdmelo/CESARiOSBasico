@@ -110,23 +110,65 @@ class AddEditViewController: UIViewController {
     // MARK: - IBActions
     fileprivate func addCar() {
         startLoadingAnimation()
-        REST.save(car: car) { (success) in
+        REST.save(car: car, onComplete: { (success) in
             if success {
                 self.goBack()
             } else {
                 self.showAlert(withTitle: "Erro", withMessage: "Nao foi possivel adicionar carro", isTryAgain: true, operation: .add_car)
             }
+        }) { (error) in
+            var response: String = ""
+            
+            switch error {
+            case .invalidJSON:
+                response = "invalidJSON"
+            case .noData:
+                response = "noData"
+            case .noResponse:
+                response = "noResponse"
+            case .url:
+                response = "JSON inválido"
+            case .taskError(let error):
+                response = "\(error.localizedDescription)"
+            case .responseStatusCode(let code):
+                if code != 200 {
+                    response = "Algum problema com o servidor. :( \nError:\(code)"
+                }
+            }
+            
+            print(response)
         }
     }
     
     fileprivate func editCar() {
         startLoadingAnimation()
-        REST.update(car: car) { (success) in
+        REST.update(car: car, onComplete: { (success) in
             if success {
                 self.goBack()
             } else {
                 self.showAlert(withTitle: "Erro", withMessage: "Nao foi possivel editar carro", isTryAgain: true, operation: .add_car)
             }
+        }) { (error) in
+            var response: String = ""
+            
+            switch error {
+            case .invalidJSON:
+                response = "invalidJSON"
+            case .noData:
+                response = "noData"
+            case .noResponse:
+                response = "noResponse"
+            case .url:
+                response = "JSON inválido"
+            case .taskError(let error):
+                response = "\(error.localizedDescription)"
+            case .responseStatusCode(let code):
+                if code != 200 {
+                    response = "Algum problema com o servidor. :( \nError:\(code)"
+                }
+            }
+            
+            print(response)
         }
     }
     

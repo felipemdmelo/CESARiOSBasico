@@ -83,7 +83,6 @@ class CarsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         loadCars()
     }
 
@@ -124,7 +123,9 @@ class CarsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let car = cars[indexPath.row]
-            REST.delete(car: car) { (success) in
+            
+            
+            REST.delete(car: car, onComplete: { (success) in
                 if success {
                     
                     // ATENCAO nao esquecer disso
@@ -134,6 +135,31 @@ class CarsTableViewController: UITableViewController {
                         // Delete the row from the data source
                         tableView.deleteRows(at: [indexPath], with: .fade)
                     }
+                }
+            }) { (error) in
+                var response: String = ""
+                
+                switch error {
+                case .invalidJSON:
+                    response = "invalidJSON"
+                case .noData:
+                    response = "noData"
+                case .noResponse:
+                    response = "noResponse"
+                case .url:
+                    response = "JSON inválido"
+                case .taskError(let error):
+                    response = "\(error.localizedDescription)"
+                case .responseStatusCode(let code):
+                    if code != 200 {
+                        response = "Algum problema com o servidor. :( \nError:\(code)"
+                    }
+                }
+                
+                print(response)
+                
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
                 }
             }
         }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum RESTOperation {
     case save
@@ -35,16 +36,28 @@ class REST {
             onError(.url)
             return
         }
-        // tarefa criada, mas nao processada
-        let dataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-            if error == nil {
-                guard let response = response as? HTTPURLResponse else {
+        
+        Alamofire.request(url).responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+            }
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+            }
+            
+            if response.error == nil {
+                guard let resp = response.response else {
                     onError(.noResponse)
                     return
                 }
-                if response.statusCode == 200 {
+                if resp.statusCode == 200 {
                     // obter o valor de data
-                    guard let data = data else {
+                    guard let data = response.data else {
                         onError(.noData)
                         return
                     }
@@ -56,30 +69,27 @@ class REST {
                         onError(.invalidJSON)
                     }
                 } else {
-                    onError(.responseStatusCode(code: response.statusCode))
+                    onError(.responseStatusCode(code: resp.statusCode))
                 }
             } else {
-                onError(.taskError(error: error!))
+                onError(.taskError(error: response.error!))
             }
         }
-        // start request
-        dataTask.resume()
     }
     
-    class func save(car: Car, onComplete: @escaping (Bool) -> Void ) {
-        applyOperation(car: car, operation: .save, onComplete: onComplete)
+    class func save(car: Car, onComplete: @escaping (Bool) -> Void, onError: @escaping (CarError) -> Void ) {
+        applyOperation(car: car, operation: .save, onComplete: onComplete, onError: onError)
     }
     
-    class func update(car: Car, onComplete: @escaping (Bool) -> Void ) {
-        applyOperation(car: car, operation: .update, onComplete: onComplete)
+    class func update(car: Car, onComplete: @escaping (Bool) -> Void, onError: @escaping (CarError) -> Void ) {
+        applyOperation(car: car, operation: .update, onComplete: onComplete, onError: onError)
     }
     
-    class func delete(car: Car, onComplete: @escaping (Bool) -> Void ) {
-        applyOperation(car: car, operation: .delete, onComplete: onComplete)
+    class func delete(car: Car, onComplete: @escaping (Bool) -> Void, onError: @escaping (CarError) -> Void ) {
+        applyOperation(car: car, operation: .delete, onComplete: onComplete, onError: onError)
     }
     
-    private class func applyOperation(car: Car, operation: RESTOperation , onComplete: @escaping (Bool) -> Void ) {
-        
+    private class func applyOperation(car: Car, operation: RESTOperation, onComplete: @escaping (Bool) -> Void, onError: @escaping (CarError) -> Void) {
         // o endpoint do servidor para update é: URL/id
         let urlString = basePath + "/" + (car._id ?? "")
         
@@ -106,11 +116,12 @@ class REST {
             return
         }
         request.httpBody = json
+        request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         
-        let dataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            if error == nil {
+        Alamofire.request(request).responseJSON { response in
+            if response.error == nil {
                 // verificar e desembrulhar em uma unica vez
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200, let _ = data else {
+                guard let resp = response.response, resp.statusCode == 200, let _ = response.data else {
                     onComplete(false)
                     return
                 }
@@ -122,30 +133,27 @@ class REST {
                 onComplete(false)
             }
         }
-        
-        dataTask.resume()
     }
     
     // o metodo pode retornar um array de nil se tiver algum erro
     class func loadBrands(onComplete: @escaping ([Brand]?) -> Void) {
         
         // URL TABELA FIPE
-        
         let urlFipe = "https://fipeapi.appspot.com/api/1/carros/marcas.json"
         guard let url = URL(string: urlFipe) else {
             onComplete(nil)
             return
         }
-        // tarefa criada, mas nao processada
-        let dataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-            if error == nil {
-                guard let response = response as? HTTPURLResponse else {
+        
+        Alamofire.request(url).responseJSON { response in
+            if response.error == nil {
+                guard let resp = response.response else {
                     onComplete(nil)
                     return
                 }
-                if response.statusCode == 200 {
+                if resp.statusCode == 200 {
                     // obter o valor de data
-                    guard let data = data else {
+                    guard let data = response.data else {
                         onComplete(nil)
                         return
                     }
@@ -163,8 +171,6 @@ class REST {
                 onComplete(nil)
             }
         }
-        // start request
-        dataTask.resume()
     }
     
 }
